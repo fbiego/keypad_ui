@@ -1,2 +1,3 @@
 # keypad_ui
-Keypad for processing
+Numeric Keypad for processing
+With pin function (display * instead of numbers) 
