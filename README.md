@@ -1,5 +1,5 @@
-# keypad_ui
-Numeric Keypad for processing
+# Keypad UI
+Numeric Keypad for processing \n
 With pin function (display * instead of numbers) 
 
 
