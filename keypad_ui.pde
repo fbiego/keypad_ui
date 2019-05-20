@@ -10,6 +10,7 @@ int del = 0;
 
 void setup(){
   size(1200,700);
+  
 }
 
 void draw(){
@@ -22,6 +23,7 @@ void draw(){
 
 void mouseReleased(){
   del = 0;
+  
 }
 
 
