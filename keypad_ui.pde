@@ -14,7 +14,7 @@ void setup(){
 
 void draw(){
  background(0);
- keypad(150,250,true,40,5);
+ keypad(150,250,true,40,5,5);
 
   
   
@@ -26,13 +26,13 @@ void mouseReleased(){
 
 
 
-void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show '*' or numbers, button size, button spacing 
+void keypad(float x, float y,boolean pin,float s, float p, float b){ //pos x, pos y, show '*' or numbers, button size, button spacing, button bezel 
 
   rectMode(CENTER);
   noStroke();
   
   fill(colB);
-  if (mousePressed && mouseX <= x-(s+p)+25 && mouseX >= x-(s+p)-25 && mouseY <= y-(s+p)+25  && mouseY >= y-(s+p)-25){
+  if (mousePressed && mouseX <= x-(s+p)+(s/2) && mouseX >= x-(s+p)-(s/2) && mouseY <= y-(s+p)+(s/2)  && mouseY >= y-(s+p)-(s/2)){
     if (del == 0){
       keys = keys + "1";
       del++;
@@ -41,9 +41,9 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x-(s+p),y-(s+p),s,s,10);      //  1
+  rect(x-(s+p),y-(s+p),s,s,b);      //  1
   
-  if (mousePressed && mouseX <= x+25 && mouseX >= x-25 && mouseY <= y-(s+p)+25  && mouseY >= y-(s+p)-25){
+  if (mousePressed && mouseX <= x+(s/2) && mouseX >= x-(s/2) && mouseY <= y-(s+p)+(s/2)  && mouseY >= y-(s+p)-(s/2)){
     if (del == 0){
       keys = keys + "2";
       del++;
@@ -52,8 +52,8 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x,y-(s+p),s,s,10);         //  2
-  if (mousePressed && mouseX <= x+(s+p)+25 && mouseX >= x+(s+p)-25 && mouseY <= y-(s+p)+25  && mouseY >= y-(s+p)-25){
+  rect(x,y-(s+p),s,s,b);         //  2
+  if (mousePressed && mouseX <= x+(s+p)+(s/2) && mouseX >= x+(s+p)-(s/2) && mouseY <= y-(s+p)+(s/2)  && mouseY >= y-(s+p)-(s/2)){
     if (del == 0){
       keys = keys + "3";
       del++;
@@ -62,9 +62,9 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x+(s+p),y-(s+p),s,s,10);      //  3
+  rect(x+(s+p),y-(s+p),s,s,b);      //  3
   
-  if (mousePressed && mouseX <= x-(s+p)+25 && mouseX >= x-(s+p)-25 && mouseY <= y+25  && mouseY >= y-25){
+  if (mousePressed && mouseX <= x-(s+p)+(s/2) && mouseX >= x-(s+p)-(s/2) && mouseY <= y+(s/2)  && mouseY >= y-(s/2)){
     if (del == 0){
       keys = keys + "4";
       del++;
@@ -73,9 +73,9 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x-(s+p),y,s,s,10);         //  4
+  rect(x-(s+p),y,s,s,b);         //  4
   
-  if (mousePressed && mouseX <= x+25 && mouseX >= x-25 && mouseY <= y+25  && mouseY >= y-25){
+  if (mousePressed && mouseX <= x+(s/2) && mouseX >= x-(s/2) && mouseY <= y+(s/2)  && mouseY >= y-(s/2)){
     if (del == 0){
       keys = keys + "5";
       del++;
@@ -84,9 +84,9 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x,y,s,s,10);            //  5
+  rect(x,y,s,s,b);            //  5
   
-  if (mousePressed && mouseX <= x+(s+p)+25 && mouseX >= x+(s+p)-25 && mouseY <= y+25  && mouseY >= y-25){
+  if (mousePressed && mouseX <= x+(s+p)+(s/2) && mouseX >= x+(s+p)-(s/2) && mouseY <= y+(s/2)  && mouseY >= y-(s/2)){
     if (del == 0){
       keys = keys + "6";
       del++;
@@ -95,9 +95,9 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x+(s+p),y,s,s,10);         //  6
+  rect(x+(s+p),y,s,s,b);         //  6
   
-  if (mousePressed && mouseX <= x-(s+p)+25 && mouseX >= x-(s+p)-25 && mouseY <= y+(s+p)+25  && mouseY >= y+(s+p)-25){
+  if (mousePressed && mouseX <= x-(s+p)+(s/2) && mouseX >= x-(s+p)-(s/2) && mouseY <= y+(s+p)+(s/2)  && mouseY >= y+(s+p)-(s/2)){
     if (del == 0){
       keys = keys + "7";
       del++;
@@ -106,9 +106,9 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x-(s+p),y+(s+p),s,s,10);      //  7
+  rect(x-(s+p),y+(s+p),s,s,b);      //  7
   
-  if (mousePressed && mouseX <= x+25 && mouseX >= x-25 && mouseY <= y+(s+p)+25  && mouseY >= y+(s+p)-25){
+  if (mousePressed && mouseX <= x+(s/2) && mouseX >= x-(s/2) && mouseY <= y+(s+p)+(s/2)  && mouseY >= y+(s+p)-(s/2)){
     if (del == 0){
       keys = keys + "8";
       del++;
@@ -117,9 +117,9 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x,y+(s+p),s,s,10);         //  8
+  rect(x,y+(s+p),s,s,b);         //  8
   
-  if (mousePressed && mouseX <= x+(s+p)+25 && mouseX >= x+(s+p)-25 && mouseY <= y+(s+p)+25  && mouseY >= y+(s+p)-25){
+  if (mousePressed && mouseX <= x+(s+p)+(s/2) && mouseX >= x+(s+p)-(s/2) && mouseY <= y+(s+p)+(s/2)  && mouseY >= y+(s+p)-(s/2)){
     if (del == 0){
       keys = keys + "9";
       del++;
@@ -128,9 +128,9 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x+(s+p),y+(s+p),s,s,10);      //  9
+  rect(x+(s+p),y+(s+p),s,s,b);      //  9
   
-  if (mousePressed && mouseX <= x-(s+p)+25 && mouseX >= x-(s+p)-25 && mouseY <= y+2*(s+p)+25  && mouseY >= y+2*(s+p)-25){
+  if (mousePressed && mouseX <= x-(s+p)+(s/2) && mouseX >= x-(s+p)-(s/2) && mouseY <= y+2*(s+p)+(s/2)  && mouseY >= y+2*(s+p)-(s/2)){
     if (del == 0){
       if (keys.length() > 0){
       keys = keys.substring(0,keys.length()-1);
@@ -141,9 +141,9 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x-(s+p),y+2*(s+p),s,s,10);     //  clear
+  rect(x-(s+p),y+2*(s+p),s,s,b);     //  clear
   
-  if (mousePressed && mouseX <= x+25 && mouseX >= x-25 && mouseY <= y+2*(s+p)+25  && mouseY >= y+2*(s+p)-25){
+  if (mousePressed && mouseX <= x+(s/2) && mouseX >= x-(s/2) && mouseY <= y+2*(s+p)+(s/2)  && mouseY >= y+2*(s+p)-(s/2)){
     if (del == 0){
       keys = keys + "0";
       del++;
@@ -152,10 +152,10 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colB);
   }
-  rect(x,y+2*(s+p),s,s,10);        //  0
+  rect(x,y+2*(s+p),s,s,b);        //  0
   
   if (keys.length() >=4){
-    if (mousePressed && mouseX <= x+(s+p)+25 && mouseX >= x+(s+p)-25 && mouseY <= y+2*(s+p)+25  && mouseY >= y+2*(s+p)-25){
+    if (mousePressed && mouseX <= x+(s+p)+(s/2) && mouseX >= x+(s+p)-(s/2) && mouseY <= y+2*(s+p)+(s/2)  && mouseY >= y+2*(s+p)-(s/2)){
       if (del == 0){
         del++;
         JOptionPane.showMessageDialog(frame,keys);
@@ -168,7 +168,7 @@ void keypad(float x, float y,boolean pin,float s, float p){ //pos x, pos y, show
   } else {
     fill(colC);
   }
-  rect(x+(s+p),y+2*(s+p),s,s,10);     //  ENTER
+  rect(x+(s+p),y+2*(s+p),s,s,b);     //  ENTER
   
   fill(colB);
   rect(x,y-2*(s+p),(3*s)+(2*p),s,1); //textarea
